@@ -2,39 +2,52 @@
 //hero section 
 
 const button = document.getElementById("btn");
-const about = document.getElementById("about");
-const title = document.getElementById("title");
 
-  
 button.addEventListener("click", function () {
-    about.scrollIntoView({
-        behavior: "smooth"
-    });
-    changeTitle("Welcome to my Website!");
+    window.location.href = "aboutMe.html";
 });
-
-function changeTitle(message) {
-    title.textContent = message;
-}
 
 // theme button & Navigation
 
 const themebtn = document.getElementById("themebtn");
 
 themebtn.addEventListener("click", function () {
-    document.body.classList.toggle("dark-theme");
+    const isLight = document.body.classList.toggle("light-theme");
 
-    const themebtn = document.getElementById("themebtn");
-    changeTheme("Light Mode");
+    if (isLight) {
+        changeTheme("Dark Mode");
+    } else {
+        changeTheme("Light Mode");
+    }
 });
 
 function changeTheme(message) {
     themebtn.textContent = message;
 }
 
+// Hamburger menu 
 
+const navbar = document.getElementById("navbar");
+const menubtn = document.getElementById("menubtn");
 
-// Skills section
+menubtn.addEventListener("click", function () {
+    const isOpen = navbar.classList.toggle("open");
+
+    menubtn.innerHTML = isOpen ? "&#10005;" : "&#9776;";
+    menubtn.setAttribute("aria-expanded", isOpen);
+    menubtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+});
+
+// closing menu 
+document.querySelectorAll(".nav-link").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navbar.classList.remove("open");
+        menubtn.innerHTML = "&#9776;";
+        menubtn.setAttribute("aria-expanded", false);
+        menubtn.setAttribute("aria-label", "Open menu");
+    });
+});
+
 
 const skills = [
     {
@@ -95,46 +108,3 @@ for(const skill of skills){
         `;
     container.appendChild(box);
 }
-
-
-// Project section
-
-const projects = [
-    {
-        name: "My First Website",
-        description: "A website I created while learning HTML and CSS.",
-        image: "image/first-website.png"
-    },
-    {
-        name: "Portfolio Website",
-        description: "This website is my personal portfolio",
-        image: "image/first-website.png"
-    }
-
-];
-
-const projectContainer = document.getElementById("projectContainer");
-
-for (const project of projects) {
-    const box = document.createElement("div");
-    box.classList.add("box");
-    box.innerHTML = `
-        <img src = "${project.image}" alt = "${project.name}">
-        <h3>${project.name}</h3>
-        <p>${project.description}</p>
-        <a href = "${project.link}" class = "project-btn">View Project</a>
-    `;
-
-    projectContainer.appendChild(box);
-}
-
-
-
-
-
-
-
-
-
-
-

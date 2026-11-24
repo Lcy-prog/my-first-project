@@ -11,15 +11,15 @@
 
 <header>
     <h1>Laurence's Website</h1>
-    <nav>
-        <a href ="#here" class="nav-link">Home</a>
+</header>
+    <nav id="navbar">
+        <button id="menubtn" class="menubtn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+        <a href ="#hero" class="nav-link">Home</a>
         <a href ="#about" class="nav-link">About</a>
         <a href ="#skills" class="nav-link">Skills</a>
-        <a href ="#projects" class="nav-link">Projects</a>
         <a href ="#contact" class="nav-link">Contact</a>
-        <button id = "themebtn" class = "themebtn">Dark Mode</button>
+        <button id = "themebtn" class = "themebtn">Light Mode</button>
     </nav>
-</header>
 
 <main>
 
@@ -52,13 +52,6 @@
         <div class = "skills-container" id="skillContainer"></div>
     </section>
 
-    <section class ="projects" id ="projects">
-
-        <h2>My Projects</h2>
-
-        <div class ="projects-container" id="projectContainer"></div>
-    </section>
-
     <section class ="contact" id ="contact">
 
         <h2>Contact Me</h2>
@@ -68,7 +61,7 @@
             Email: <a href="mailto:oystersaws@gmail.com" class="contact-link">Oystersaws@gmail.com</a> 
         </p>
         <p>
-            Facebook: <a href="#" class="contact-link">Laurence</a>
+            Facebook: <a href="https://www.facebook.com/laurence.malonzo.71" class="contact-link">Laurence Malonzo</a>
         </p>
 
     </section>
@@ -76,8 +69,14 @@
 </main>
 
 <footer>
-    <p>&copy; 2026 Laurence. All rights reserved</p>
-    <p>second-year college student</p>
+    <div class="footer-links">
+        <a href="#hero" class="footer-link">Home</a>
+        <a href="#about" class="footer-link">About</a>
+        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#contact" class="footer-link">Contact</a>
+    </div>
+    <p>&copy; 2026 Laurence. All rights reserved.</p>
+    <p>Second-Year BSIT Student | Cavite State University</p>
 </footer>
 
 
